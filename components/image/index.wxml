@@ -20,7 +20,7 @@
   >
     <slot wx:if="{{ useLoadingSlot }}" name="loading" />
     <view wx:else class="cu-icon--image">
-      <image src="{{loadingSrc}}" mode="aspectFit" class="cu-icon__image"></image>
+      <image src="{{loadingImgSrc}}" mode="aspectFit" class="cu-icon__image"></image>
     </view>
   </view>
 
@@ -32,7 +32,7 @@
     <slot wx:if="{{ useErrorSlot }}" name="error" />
     <block wx:else>
       <view class="cu-icon--image">
-        <image src="{{errorSrc}}" mode="aspectFit" class="cu-icon__image"></image>
+        <image src="{{errorImgSrc}}" mode="aspectFit" class="cu-icon__image"></image>
       </view>
       <view wx:if="{{errorText}}" class="cu-error--text">{{errorText}}</view>
     </block>

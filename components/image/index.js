@@ -25,6 +25,15 @@
 
 import { addUnit, isDef } from '../utils'
 
+const LOADING_SRC_MAP = {
+  gif: './loading.gif',
+  img: './icon-imggood.png'
+}
+
+const ERROR_SRC_MAP = {
+  img: './icon-imgbad.png'
+}
+
 Component({
 
   externalClasses: ['custom-class', 'loading-class', 'error-class', 'image-class'],
@@ -49,6 +58,26 @@ Component({
     },
     'radius': function() {
       this.setStyle()
+    },
+    'loadingType': function(loadingType) {
+      this.setData({
+        loadingImgSrc: LOADING_SRC_MAP[loadingType]
+      })
+    },
+    'loadingSrc': function(loadingSrc) {
+      this.setData({
+        loadingImgSrc: loadingSrc
+      })
+    },
+    'errorType': function(errorType) {
+      this.setData({
+        errorImgSrc: LOADING_SRC_MAP[errorType]
+      })
+    },
+    'errorSrc': function(errorSrc) {
+      this.setData({
+        errorImgSrc: errorSrc
+      })
     }
   },
 
@@ -75,9 +104,17 @@ Component({
       type: Boolean,
       value: true,
     },
+    loadingType: {
+      type: 'String',
+      value: 'img'
+    },
     loadingSrc: {
       type: String,
-      value: './loading_1.gif'
+      value: ''
+    },
+    errorType: {
+      type: 'String',
+      value: 'img'
     },
     errorSrc: {
       type: String,
@@ -88,6 +125,8 @@ Component({
   
   data: {
     imgSrc: '',
+    loadingImgSrc: '',
+    errorImgSrc: '',
     error: false,
     loading: true,
     viewStyle: '',
@@ -95,10 +134,17 @@ Component({
   },
 
   ready() {
+    this.setType()
     this.setStyle()
   },
 
   methods: {
+    setType() {
+      this.setData({
+        loadingImgSrc: LOADING_SRC_MAP[this.data.loadingType],
+        errorImgSrc: ERROR_SRC_MAP[this.data.errorType]
+      })
+    },
     setStyle() { // 设置外层样式
       const { width, height, radius } = this.data;
       let style = '';

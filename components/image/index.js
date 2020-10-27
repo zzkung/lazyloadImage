@@ -71,7 +71,7 @@ Component({
     },
     'errorType': function(errorType) {
       this.setData({
-        errorImgSrc: LOADING_SRC_MAP[errorType]
+        errorImgSrc: ERROR_SRC_MAP[errorType]
       })
     },
     'errorSrc': function(errorSrc) {
@@ -125,8 +125,8 @@ Component({
   
   data: {
     imgSrc: '',
-    loadingImgSrc: '',
-    errorImgSrc: '',
+    loadingImgSrc: './icon-imggood.png',
+    errorImgSrc: './icon-imgbad.png',
     error: false,
     loading: true,
     viewStyle: '',
@@ -134,17 +134,10 @@ Component({
   },
 
   ready() {
-    this.setType()
     this.setStyle()
   },
 
   methods: {
-    setType() {
-      this.setData({
-        loadingImgSrc: LOADING_SRC_MAP[this.data.loadingType],
-        errorImgSrc: ERROR_SRC_MAP[this.data.errorType]
-      })
-    },
     setStyle() { // 设置外层样式
       const { width, height, radius } = this.data;
       let style = '';

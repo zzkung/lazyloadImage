@@ -6,6 +6,11 @@
 
 微信小程序图片懒加载组件
 
+## 演示
+<video id="video" width="350" autoplay buffered loop preload="auto" poster="https://blog.zzkung.com/AppImg/lazyloadImage.png">
+  <source id="mp4" src="https://blog.zzkung.com/AppImg/lazyloadimage.mp4" type="video/mp4">
+</video>
+
 ## Usage
 
 ### 引入

@@ -1,5 +1,12 @@
 <view>
-  <block wx:for="{{imglist}}" wx:key="index">
-    <cu-image class="img" width="240rpx" height="200rpx" src="{{item.src}}" fill="aspectFill" preview-image lazy-load />
-  </block>
+  <view style="margin-bottom: 30px;">
+    <view>默认用法</view>
+    <cu-image src="https://cdn.pixabay.com/photo/2020/10/09/08/15/dragonfly-5639879__340.jpg"/>
+  </view>
+  <view>
+    <view>其他用法</view>
+    <block wx:for="{{imglist}}" wx:key="index">
+      <cu-image class="img" width="240rpx" height="200rpx" src="{{item.src}}" fill="aspectFill" preview-image lazy-load />
+    </block>
+  </view>
 </view>

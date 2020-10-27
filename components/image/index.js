@@ -118,7 +118,7 @@ Component({
     },
     errorSrc: {
       type: String,
-      value: './icon-imgbad.png'
+      value: ''
     },
     errorText: String
   },

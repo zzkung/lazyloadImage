@@ -1,0 +1,5 @@
+<view>
+  <block wx:for="{{imglist}}" wx:key="index">
+    <cu-image class="img" width="240rpx" height="200rpx" src="{{item.src}}" fill="aspectFill" preview-image lazy-load />
+  </block>
+</view>

@@ -1,0 +1,5 @@
+.img {
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  margin-bottom: 10rpx;
+}

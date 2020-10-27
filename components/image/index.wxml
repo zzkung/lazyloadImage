@@ -1,0 +1,37 @@
+<view
+  style="{{ viewStyle }}"
+  class="custom-class cu-image {{ round ? 'cu-image--round' : '' }}"
+  bind:tap="onClick"
+>
+  <image
+    wx:if="{{ !error }}"
+    src="{{ imgSrc }}"
+    mode="{{ fit }}"
+    lazy-load="{{ lazyLoad }}"
+    class="image-class cu-image__img"
+    show-menu-by-longpress="{{ showMenuByLongpress }}"
+    bind:load="onLoad"
+    bind:error="onError"
+  />
+
+  <view
+    wx:if="{{ loading && showLoading }}"
+    class="loading-class cu-image__loading"
+  >
+    <slot wx:if="{{ useLoadingSlot }}" name="loading" />
+    <view wx:else class="cu-icon--image">
+      <image src="{{loadingSrc}}" mode="aspectFit" class="cu-icon__image"></image>
+    </view>
+  </view>
+
+  <view
+    wx:if="{{ error && showError }}"
+    class="error-class cu-image__error"
+  >
+    <slot wx:if="{{ useErrorSlot }}" name="error" />
+    <view wx:if="{{ !useErrorSlot }}" class="cu-icon--image">
+      <image src="{{errorSrc}}" mode="aspectFit" class="cu-icon__image"></image>
+    </view>
+    <view wx:if="{{ !useErrorSlot }}" class="cu-error--text" catchtap="onLoadFail">加载失败，点击重试</view>
+  </view>
+</view>

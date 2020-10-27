@@ -31,7 +31,8 @@ Component({
 
   observers: {
     'src': function(src) {
-      let previewList = this.data.previewList
+      if (src === this.data.imgSrc) return false
+      let previewList = []
       previewList.push(src)
       this.setData({
         error: false,

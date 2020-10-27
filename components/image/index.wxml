@@ -27,13 +27,14 @@
   <view
     wx:if="{{ error && showError }}"
     class="error-class cu-image__error"
+    catchtap="onLoadFail"
   >
     <slot wx:if="{{ useErrorSlot }}" name="error" />
     <block wx:else>
       <view class="cu-icon--image">
         <image src="{{errorSrc}}" mode="aspectFit" class="cu-icon__image"></image>
       </view>
-      <view class="cu-error--text" catchtap="onLoadFail">加载失败，点击重试</view>
+      <view wx:if="{{errorText}}" class="cu-error--text">{{errorText}}</view>
     </block>
   </view>
 </view>

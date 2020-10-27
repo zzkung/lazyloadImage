@@ -15,6 +15,7 @@
  * @param {Boolean} [showLoading=true] 是否展示图片加载中提示
  * @param {String} [loadingSrc='./icon-imggood.png'] 加载中图片路径
  * @param {String} [errorSrc='./icon-imgbad.png'] 加载失败图片路径
+ * @param {String} errorText 加载失败的文字提示
  * 
  * 点击加载失败图片时触发
  * @method onLoadFail
@@ -75,12 +76,13 @@ Component({
     },
     loadingSrc: {
       type: String,
-      value: './icon-imggood.png'
+      value: './loading_1.gif'
     },
     errorSrc: {
       type: String,
       value: './icon-imgbad.png'
-    }
+    },
+    errorText: String
   },
   
   data: {

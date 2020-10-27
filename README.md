@@ -62,6 +62,7 @@
 | show-error | Boolean | true | 否 | 是否展示图片加载失败提示 |
 | loading-src | String | ./icon-imggood.png | 否 | 加载中图片路径 |
 | error-src | String | ./icon-imgbad.png | 否 | 加载失败图片路径 |
+| error-text | String | - | 否 | 加载失败的文字提示 |
 | show-menu-by-longpress | Boolean | false | 否 | 是否开启长按图片显示识别小程序码菜单 |
 
 ## Events

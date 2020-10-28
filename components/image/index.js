@@ -27,11 +27,13 @@ import { addUnit, isDef } from '../utils'
 
 const LOADING_SRC_MAP = {
   gif: './loading.gif',
-  img: './icon-imggood.png'
+  img: './icon-imggood.png',
+  avatar: './icon-defavatar.png'
 }
 
 const ERROR_SRC_MAP = {
-  img: './icon-imgbad.png'
+  img: './icon-imgbad.png',
+  avatar: './icon-defavatar.png'
 }
 
 Component({

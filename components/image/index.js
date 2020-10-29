@@ -153,9 +153,14 @@ Component({
         style += 'overflow: hidden;';
         style += `border-radius: ${addUnit(radius)};`;
       }
+      console.log(style)
       this.setData({ viewStyle: style });
     },
     onLoad(event) {
+      let { fit, viewStyle } = this.data
+      if (fit == 'widthFix') { // 防止图片显示不全
+        this.setData({ viewStyle: `height: auto;${viewStyle}`})
+      }
       this.setData({
         loading: false,
       });

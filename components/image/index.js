@@ -153,7 +153,6 @@ Component({
         style += 'overflow: hidden;';
         style += `border-radius: ${addUnit(radius)};`;
       }
-      console.log(style)
       this.setData({ viewStyle: style });
     },
     onLoad(event) {
